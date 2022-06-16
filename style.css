@@ -35,7 +35,7 @@ body {
 }
 
 .grid-cell-hover {
-    display = flex;
-    flex = 1;
-    background-color = black;
+    display: flex;
+    flex: 1;
+    background-color: black;
 }
