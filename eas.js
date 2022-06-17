@@ -16,6 +16,9 @@ function makeGridRows(x) {
 
 makeGridRow();
 
+/*Notes:
+I think I need to create a nodeList of gridRows to appened to gridContainer. More testing necessary.*/
+
 /*const gridCells = document.querySelectorAll('div.row div');
 gridCells.forEach(div => div.addEventListener('mouseover', () => div.classList.add('cell-hover')));
 */
