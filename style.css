@@ -16,25 +16,26 @@ body {
     height: 10vh;
 }
 
-.grid-container {
+.container {
     display: flex;
     flex-direction: column;
     height: 90vh;
+    width: 100vw;
     flex: 1;
 }
 
-.grid-row {
+.row {
     display: flex;
     width: 100vw;
     flex: 1;
 }
 
-.grid-cell {
+.cell {
     display: flex;
     flex: 1;
 }
 
-.grid-cell-hover {
+.cell-hover {
     display: flex;
     flex: 1;
     background-color: black;
