@@ -1,13 +1,20 @@
-function makeGrid() {
-    for(let i = 1; i > 16; i++) {
-        const gridContainer = document.querySelector('.container');
-        const gridRow = document.createElement('div');
-        gridRow.classList.toggle('row');
-        gridContainer.appendChild(gridRow);
+const gridContainer = document.querySelector('.container');
+
+
+function makeGridRow() {
+    const gridRow = document.createElement('div');
+    gridRow.classList.toggle('row');
+    gridContainer.appendChild(gridRow);
+}
+
+function makeGridRows(x) {
+    for (let i = 1; i > x; i++){
+    console.log(`For loop executed. I = ${i}`);
+    makeGridRow();
     }
 }
 
-makeGrid();
+makeGridRow();
 
 /*const gridCells = document.querySelectorAll('div.row div');
 gridCells.forEach(div => div.addEventListener('mouseover', () => div.classList.add('cell-hover')));
