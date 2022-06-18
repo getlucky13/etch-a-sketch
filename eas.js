@@ -1,24 +1,33 @@
-const gridContainer = document.querySelector('.container');
-
-
-function makeGridRow() {
-    const gridRow = document.createElement('div');
-    gridRow.classList.toggle('row');
-    gridContainer.appendChild(gridRow);
+function createDiv(classes) {
+  const div = document.createElement('div');
+  
+  if (classes.length) {
+    div.classList.add(...classes);
+  }
+  
+  return div;
 }
 
-function makeGridRows(x) {
-    for (let i = 1; i > x; i++){
-    console.log(`For loop executed. I = ${i}`);
-    makeGridRow();
-    }
+function createRow(numCells) {
+  const row = createDiv(['row']);
+  for (i = 0; i < numCells; i++) {
+    const cell = createDiv(['cell']);
+    row.appendChild(cell);
+  }
+  
+  return row;
 }
 
-makeGridRow();
+function createGrid(dimension) {
+  const grid = new DocumentFragment();
+  for (i = 0; i < dimension; i++) {
+    const row = createRow(dimension);
+    grid.appendChild(row);
+  }
+  
+  document.querySelector('.container').appendChild(grid);
+}
 
-/*Notes:
-I think I need to create a nodeList of gridRows to appened to gridContainer. More testing necessary.*/
+createGrid(5);
 
-/*const gridCells = document.querySelectorAll('div.row div');
-gridCells.forEach(div => div.addEventListener('mouseover', () => div.classList.add('cell-hover')));
-*/
+/* Properly creates a single row with the correct amount of cells and css applied. Seems as for loop in createGrid is only executing once. Need more testing./*
