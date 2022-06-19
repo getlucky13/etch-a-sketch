@@ -10,7 +10,7 @@ function createDiv(classes) {
 
 function createRow(numCells) {
   const row = createDiv(['row']);
-  for (i = 0; i < numCells; i++) {
+  for (let i = 0; i < numCells; i++) {
     const cell = createDiv(['cell']);
     row.appendChild(cell);
   }
@@ -20,7 +20,8 @@ function createRow(numCells) {
 
 function createGrid(dimension) {
   const grid = new DocumentFragment();
-  for (i = 0; i < dimension; i++) {
+  let x = parseInt(dimension);
+  for (let i = 0; i < x; i++) {
     const row = createRow(dimension);
     grid.appendChild(row);
   }
@@ -28,6 +29,11 @@ function createGrid(dimension) {
   document.querySelector('.container').appendChild(grid);
 }
 
-createGrid(5);
+createGrid(10);
 
-/* Properly creates a single row with the correct amount of cells and css applied. Seems as for loop in createGrid is only executing once. Need more testing./*
+/* WE GOT IT BABYYYY
+
+STILL NEED
+event listener for button
+function to process user input and run createGrid. must also clear old grid
+add back code to toggle class*/
