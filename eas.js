@@ -29,7 +29,11 @@ function createGrid(dimension) {
   document.querySelector('.container').appendChild(grid);
 }
 
-createGrid(10);
+createGrid(32);
+
+const gridCells = document.querySelectorAll('div.row div');
+gridCells.forEach(div => div.addEventListener('mouseover', () => div.style.background = 'black'));
+
 
 /* WE GOT IT BABYYYY
 
