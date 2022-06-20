@@ -44,7 +44,6 @@ function removeCurrentGrid() {
 createGrid(32);
 toggleStyle();
 
-const gridRows = document.querySelectorAll('.row');
 newGridBtn.addEventListener('click', removeCurrentGrid);
 
 
