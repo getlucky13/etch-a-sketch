@@ -29,6 +29,9 @@ function createGrid(dimension) {
   document.querySelector('.container').appendChild(grid);
 }
 
+const newGameBtn = document.querySelector('.promptButton');
+
+
 createGrid(32);
 
 const gridCells = document.querySelectorAll('div.row div');
