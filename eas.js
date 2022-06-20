@@ -36,11 +36,16 @@ function toggleStyle() {
   if(gridCells) {gridCells.forEach(div => div.addEventListener('mouseover', () => div.style.background = 'black'))} ;
 }
 
+function removeCurrentGrid() {
+  const gridRows = document.querySelectorAll('.row');
+  gridRows.forEach((c) => c.parentNode.removeChild(c));
+}
+
 createGrid(32);
 toggleStyle();
 
 const gridRows = document.querySelectorAll('.row');
-newGridBtn.addEventListener('click', () => gridRows.forEach((c) => c.parentNode.removeChild(c)));
+newGridBtn.addEventListener('click', removeCurrentGrid);
 
 
 
