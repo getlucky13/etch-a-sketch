@@ -1,3 +1,5 @@
+const newGridBtn = document.querySelector('.promptButton');
+
 function createDiv(classes) {
   const div = document.createElement('div');
   
@@ -29,13 +31,19 @@ function createGrid(dimension) {
   document.querySelector('.container').appendChild(grid);
 }
 
-const newGameBtn = document.querySelector('.promptButton');
-
+function toggleStyle() {
+  const gridCells = document.querySelectorAll('div.row div');
+  if(gridCells) {gridCells.forEach(div => div.addEventListener('mouseover', () => div.style.background = 'black'))} ;
+}
 
 createGrid(32);
+toggleStyle();
 
-const gridCells = document.querySelectorAll('div.row div');
-gridCells.forEach(div => div.addEventListener('mouseover', () => div.style.background = 'black'));
+const gridRows = document.querySelectorAll('.row');
+newGridBtn.addEventListener('click', () => gridRows.forEach((c) => c.parentNode.removeChild(c)));
+
+
+
 
 
 /* WE GOT IT BABYYYY
