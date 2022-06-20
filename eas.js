@@ -41,18 +41,31 @@ function removeCurrentGrid() {
   gridRows.forEach((c) => c.parentNode.removeChild(c));
 }
 
-createGrid(32);
-toggleStyle();
+function takeDimension() {
+  let input = prompt('Enter a number between 2 and 100.', '');
+  let dimension = parseInt(input);
+  if (isNaN(dimension)){
+    alert("You didn't enter a number as instructed. Please press New Grid and try again.");
+    return;
+  } else if (dimension < 2 || dimension > 100) {
+    alert("You entered a number that is too small or too large. Please press New Grid and try again.");
+    return;
+  }
+  removeCurrentGrid();
+  createGrid(dimension);
+  toggleStyle();
+}
 
-newGridBtn.addEventListener('click', removeCurrentGrid);
+newGridBtn.addEventListener('click', takeDimension);
 
 
 
 
+/*IT WORKS BABY
 
-/* WE GOT IT BABYYYY
+Everything currently works as intended and satisfies the assignment's requirements. 
+Stretch goals - 
+Implement ability to erase and tie it to a button for toggling
+Implement a button for toggling ability to draw
+Implement a button for randomizing color of drawing*/
 
-STILL NEED
-event listener for button
-function to process user input and run createGrid. must also clear old grid
-add back code to toggle class*/
